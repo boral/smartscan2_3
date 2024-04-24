@@ -1,0 +1,12 @@
+streamlit
+PyMuPDF
+reportlab
+python-dotenv
+google.generativeai
+Pillow
+pandas
+plotly-express
+openpyxl
+python-docx
+docx2pdf
+markdown2
