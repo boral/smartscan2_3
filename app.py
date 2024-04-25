@@ -16,6 +16,20 @@ st.set_page_config(layout="wide")
 
 system = platform.system()
 
+import os
+
+def list_files_and_directories(path="."):
+    # List all files and directories in the specified path
+    for entry in os.listdir(path):
+        # Join the path with the entry name to get the full path
+        full_path = os.path.join(path, entry)
+        if os.path.isdir(full_path):
+            print("Directory:", full_path)
+            # Recursively list files and directories within the directory
+            list_files_and_directories(full_path)
+        else:
+            print("File:", full_path)
+
 
 #input_image_path = 'uploaded_image.jpg'
 
@@ -135,6 +149,8 @@ def main():
                         patient_image_filename = 'submitted_images/img_' + patient_id
                         
                         col6, col6_2, col6_3 = st.columns([1,1,1])
+
+                        print( list_files_and_directories('.') )
                         
                         # Display the uploaded images
                         with col6:
